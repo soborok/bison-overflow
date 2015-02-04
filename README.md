@@ -17,5 +17,5 @@ Project Description: Stackover flow for DBC
 
 
 
-### Have a look!
+## Have a look!
 [Group Project Process](https://github.com/bison-2014/phase-3-guide/blob/chicago/resources/group_project_process.md)
