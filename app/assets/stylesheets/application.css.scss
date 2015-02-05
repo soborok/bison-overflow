@@ -1,24 +1,19 @@
-@import "bourbon/bourbon";
-@import "neat/neat";
+
 
 $font-stack: Verdana, sans-serif;
 $primary-color: black;
-$nav-color: gradient(#873ED1, #49198E);
 $nav-font: white;
 
 body{
-  font: 100% $font-stack;
+  font-family: $font-stack;
   color: $primary-color;
-  background: -webkit-linear-gradient(white, grey);
-  background: -o-linear-gradient(white, grey);
-  background: -moz-linear-gradient(white, grey);
-  background: linear-gradient(white, grey);
+  background: grey;
 }
 
 nav{
   padding: 12px;
   border-radius: 10px;
-  background: linear-gradient(#873ED1, #49198E);
+  background: #49198E;
   color: $nav-font;
 }
 
