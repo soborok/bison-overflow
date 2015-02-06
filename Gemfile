@@ -25,7 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -46,3 +46,10 @@ group :development, :test do
 end
 
 gem 'rails_12factor', group: :production
+
+group :test do
+  gem 'shoulda-matchers', require: false
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'capybara'
+  gem 'launchy'
+end
