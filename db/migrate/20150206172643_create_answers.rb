@@ -1,7 +1,7 @@
 class CreateAnswers < ActiveRecord::Migration
   def change
     create_table :answers do |t|
-      t.string     :title
+      t.string     :text
       t.belongs_to :question
       t.datetime   :created_at
       t.datetime   :updated_at
