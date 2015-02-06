@@ -5,6 +5,21 @@ Rails.application.routes.draw do
 
   root 'questions#new'
 
+  get '/users' => 'users#index'
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+  # GET '/users/:id' => 'users#show'
+  # GET '/users/:id/edit' => users#edit
+  # PATCH/PUT '/users/:id' => user#update
+  # Delete '/users/:id' => users#destroy
+  get '/login' => 'users#login'
+
+
+
+  post '/login' => 'sessions#login'
+  delete '/logout' => 'sessions#logout'
+
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
