@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :questions
+  resources :questions do
+    resources :answers, only: [ :create, :edit, :new, :delete ]
+  end
 
-  root 'questions#new'
+  resources :users, only:[:index] do
+    resources :answers, only: [ :index ]
+  end
 
-  get '/users' => 'users#index'
+  root 'questions#index'
+
   get '/signup' => 'users#new'
   post '/signup' => 'users#create'
   # GET '/users/:id' => 'users#show'
