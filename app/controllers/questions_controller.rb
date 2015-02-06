@@ -3,7 +3,7 @@ class QuestionsController < ApplicationController
   def index
     @thing = Question.new
     @questions = Question.all
-    @user = User.find(session[:user_id]) || User.new
+    @user = User.find_by(id: session[:user_id]) || User.new
   end
 
   def create
