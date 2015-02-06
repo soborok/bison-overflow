@@ -14,11 +14,11 @@ describe "Question" do
   end
 
   it "must have a title" do
-      expect{notitle.save!}.to raise_error
+    expect{notitle.save!}.to raise_error
   end
 
   it "must have content" do
-      expect{nocontent.save!}.to raise_error
+    expect{nocontent.save!}.to raise_error
   end
 
 end
