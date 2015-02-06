@@ -1,6 +1,6 @@
 <h1>Sign Up</h1>
 
-<%= form_for @user, url: signup_path do |f| %>
+<%= form_for @user, url: signup_path do |f|  %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -15,6 +15,7 @@
     </div>
   <% end %>
 
+<div id="signup_form">
   <p>
     <%= f.label :email %><br>
     <%= f.text_field :email %>
@@ -41,3 +42,4 @@
 
 <% end %>
 <%= link_to 'Back', root_path %>
+</div>
