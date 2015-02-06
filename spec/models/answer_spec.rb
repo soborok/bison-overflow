@@ -2,9 +2,9 @@ require 'spec_helper'
 
 describe "Answer" do
   let(:user) { User.new(email: "Foo@goo.org") }
-  let(:question) { user.questions.new(title: "Is this?", content: "true.")}
-  let(:answeruser) {User.create(email: "barf@gmail.com")}
-  let(:useranswer) {answeruser.answers.create(content:"butt")}
+  let(:question) { user.questions.new(title: "Is this?", content: "I am too happy")}
+  let(:answeruser) {User.create(email: "happy@gmail.com")}
+  let(:useranswer) {answeruser.answers.create(content:"be more sad")}
   let(:answer) { question.answers.new(content: "That's simply wrong.")}
   let(:nocontent) { Answer.new }
 
