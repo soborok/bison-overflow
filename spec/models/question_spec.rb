@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Question do
+describe "Question" do
   let(:question) { Question.new(title: "Test Title", content: "Test Content")}
   let(:notitle) { Question.new(content: "it does not have a title")}
   let(:nocontent) { Question.new(title: "it does not have a title")}
