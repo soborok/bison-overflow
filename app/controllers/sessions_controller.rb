@@ -9,16 +9,25 @@ class SessionsController < ActionController::Base
     redirect_to root_path
   end
 
+  def signup
+    if @user = User.create(user_params)
+      session[:user_id] = @user.id
+      redirect_to root_path
+    else
+      redirect_to signup_path
+    end
+  end
+
   def logout
     session.delete(:user_id)
     redirect_to root_path
   end
-
+  
 
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :first_name, :last_name, :password)
   end
 
 end
