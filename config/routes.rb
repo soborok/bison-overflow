@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   get '/signup' => 'users#new'
-  post '/signup' => 'users#create'
+  # GET '/users' => 'users#index'  
+  # POST '/users' => 'users#create'  
   # GET '/users/:id' => 'users#show'
   # GET '/users/:id/edit' => users#edit
   # PATCH/PUT '/users/:id' => user#update
@@ -20,8 +21,8 @@ Rails.application.routes.draw do
   get '/login' => 'users#login'
 
 
-
   post '/login' => 'sessions#login'
+  post '/signup' => 'sessions#signup'
   delete '/logout' => 'sessions#logout'
 
 

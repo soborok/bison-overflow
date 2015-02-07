@@ -3,7 +3,6 @@ class QuestionsController < ApplicationController
   def index
     @thing = Question.new
     @questions = Question.all
-    @user = User.find_by(id: session[:user_id]) || User.new
   end
 
   def create
@@ -22,6 +21,22 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+  end
+
+  def edit
+    @question = Question.find(params[:id])
+  end
+
+  def destroy
+    question = Question.find(params[:id])
+    question.destroy
+    redirect_to questions_path
+  end
+
+  def update
+    @question = Question.find(params[:id])
+    @question.update_attributes(question_params)
+    redirect_to question_path
   end
 
   private
