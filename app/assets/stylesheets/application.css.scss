@@ -22,6 +22,12 @@ nav{
   border-radius: 10px;
   background: linear-gradient(#873ED1, #49198E);
   color: $nav-font;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 nav h1{
@@ -41,24 +47,6 @@ nav ul li{
 }
 
 
-nav a {
-  color: white;
-}
-nav a:link {
-    color: white;
-}
-
-nav a:visited {
-    color: white;
-}
-
-nav a:hover {
-    color: white;
-}
-
-nav a:active {
-    color: white;
-}
 
 
 .content{
