@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     resources :answers, only: [ :create, :edit, :new, :delete ]
   end
 
-  resources :users, only:[:index] do
+  resources :users, only:[:index, :show] do
     resources :answers, only: [ :index ]
   end
 

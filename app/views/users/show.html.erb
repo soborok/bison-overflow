@@ -1,0 +1,14 @@
+<div ="questions_container">
+  <h1>Welcome, <%= @user.first_name + " " + @user.last_name %>, here are your questions:</H1>
+    <% unless @questions.length == 0 %>
+  <ul>
+  <% @questions.each do |question| %>
+    <li>
+    <h2><%= link_to question.title, question_path(question) %></h2>
+    <%= question.content %>
+    </li><br />
+  <% end %>
+  <% else %>
+    <p>You have no active questions.
+  <% end %>
+  </ul>
