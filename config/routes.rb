@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   resources :questions do
-    resources :answers, only: [ :create, :edit, :new, :delete ]
+    resources :answers, except: :index
   end
 
   resources :users, only:[:index, :show] do
@@ -12,8 +12,8 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   get '/signup' => 'users#new'
-  # GET '/users' => 'users#index'  
-  # POST '/users' => 'users#create'  
+  # GET '/users' => 'users#index'
+  # POST '/users' => 'users#create'
   # GET '/users/:id' => 'users#show'
   # GET '/users/:id/edit' => users#edit
   # PATCH/PUT '/users/:id' => user#update

@@ -22,7 +22,7 @@ class SessionsController < ActionController::Base
     session.delete(:user_id)
     redirect_to root_path
   end
-  
+
 
   private
 
