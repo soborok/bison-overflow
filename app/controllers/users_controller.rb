@@ -16,4 +16,10 @@ class UsersController < ApplicationController
 		@user = User.new
 	end
 
+  def answered_questions
+  	user = User.find(params[:id]) || current_user
+  	@answered_questions = user.answered_questions.uniq
+	end
+
+	helper_method :answered_questions
 end
