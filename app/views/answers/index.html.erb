@@ -1,0 +1,12 @@
+path: /answers<br />
+<br />
+
+<ul>
+	<% @answers.each do |answer| %>
+	<li>
+	Question: <%= link_to answer.question.title, question_path(answer.question) %><br />
+	answerd by: <%= link_to answer.user.email, user_path(answer.user) %><br />
+	<%= answer.content %>
+	</li><br />
+	<% end %>
+</ul>

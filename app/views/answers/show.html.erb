@@ -1,0 +1,9 @@
+<%= @answer.question.title %>
+<%= answer.content%>
+
+<% if current_user == @answer.user %>
+<%= link_to 'Edit', edit_question_path %>
+<%= link_to 'Delete', question_path, method: :delete %>
+<% end %>
+
+<!-- add 'Back' link -->

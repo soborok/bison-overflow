@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	skip_before_filter :verify_authenticity_token
 
 	def show
-		@user = current_user || User.find(params[:id])
+		@user = User.find(params[:id]) || current_user
 		@questions = Question.where(user_id: @user.id)
 		@answers = Answer.where(user_id: @user.id)
 	end

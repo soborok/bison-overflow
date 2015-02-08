@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   root 'questions#index'
 
   resources :questions do
-    resources :answers, only: [:index, :new, :create]
+    resources :answers, only: [:new, :create]
   end
   # Shallow Nesting
-  resources :answers, only: [:show, :edit, :update, :destroy]
+  resources :answers, only: [:index, :show, :edit, :update, :destroy]
 
 # #########################################
 # resources :questions do

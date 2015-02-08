@@ -1,5 +1,7 @@
 <div ="questions_container">
-  <h1>Welcome, <%= @user.first_name + " " + @user.last_name %>, here are your questions:</H1>
+  <% if @user == current_user %>
+  <h1>Welcome, <%= @user.first_name + " " + @user.last_name %>, here are your questions:</h1>
+  <% end %>
 
   <h3>My questions</h3>
     <% unless @questions.length == 0 %>
