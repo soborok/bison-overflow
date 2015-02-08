@@ -7,6 +7,7 @@ $nav-color: gradient(#873ED1, #49198E);
 $nav-font: white;
 
 body{
+  display: block;
   font: 100% $font-stack;
   color: $primary-color;
   background: -webkit-linear-gradient(white, grey);
@@ -16,10 +17,17 @@ body{
 }
 
 nav{
+  display: block;
   padding: 12px;
   border-radius: 10px;
   background: linear-gradient(#873ED1, #49198E);
   color: $nav-font;
+  a {
+    color: white;
+    &:hover {
+      color: white;
+    }
+  }
 }
 
 nav h1{
@@ -39,22 +47,9 @@ nav ul li{
 }
 
 
-a {
-  color: white;
-}
-/*a:link {
-    color: white;
-}
 
-a:visited {
-    color: white;
-}
 
-a:hover {
-    color: white;
+.content{
+ width: 60%;
+ margin: auto;
 }
-
-a:active {
-    color: white;
-}
-*/
