@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(session[:user_id])
     @questions = Question.where(user_id: @user.id)
+    @answers = Answer.where(user_id: @user.id)
 	end
 
 	def login

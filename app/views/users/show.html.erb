@@ -1,5 +1,7 @@
 <div ="questions_container">
   <h1>Welcome, <%= @user.first_name + " " + @user.last_name %>, here are your questions:</H1>
+
+  <h3>My questions</h3>
     <% unless @questions.length == 0 %>
   <ul>
   <% @questions.each do |question| %>
@@ -11,4 +13,14 @@
   <% else %>
     <p>You have no active questions.
   <% end %>
+  </ul>
+
+  <h3>My answers</h3>
+  <ul>
+    <% @answers.each do |answer| %>
+    <li><%= answer.content %><br />
+    <%= link_to 'Go to the question', question_path(answer.question) %>
+    </li>
+    <br />
+    <% end %>
   </ul>
