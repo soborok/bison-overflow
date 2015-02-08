@@ -1,4 +1,4 @@
-class SessionsController < ActionController::Base
+class SessionsController < ApplicationController
 
   def login
     if @user = User.authenticate(user_params[:email], user_params[:password])
