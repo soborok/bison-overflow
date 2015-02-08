@@ -1,14 +1,16 @@
-<div class="content">
-  <%= form_for @thing, url: {action: "create"} do |f| %>
-    <%= f.label :title %>:
-    <%= f.text_field :title %><br>
-
-    <%= f.label :content %>
-    <%= f.text_area :content %><br>
-
-    <%= f.submit %>
+<div class="row text-center">
+  <%= form_for(@thing) do |f| %>
+    <div class="large-10 large-centered columns">
+      <%= f.text_field :title, placeholder: "Question Title" %>
+    </div>
+    <div class="large-10 large-centered columns">
+      <%= f.text_area :content, placeholder: "Your Question", rows: 5 %>
+    </div>
+    <div class="large-10 large-centered columns">
+      <%= f.text_field :all_tags, placeholder: "Tags separated by comma" %>
+    </div>
+    <div class="large-10 large-centered columns">
+      <%= f.submit "Post", class: "button"%>
+    </div>
   <% end %>
-  <%= flash[:errors] %>
 </div>
-
-

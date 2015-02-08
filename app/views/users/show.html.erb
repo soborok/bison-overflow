@@ -8,7 +8,9 @@
     <li>
     <h2><%= link_to question.title, question_path(question) %></h2>
     <%= question.content %>
-    </li><br />
+    </li>
+    </br>
+    Tags: <%= question.all_tags %>
   <% end %>
   <% else %>
     <p>You have no active questions.

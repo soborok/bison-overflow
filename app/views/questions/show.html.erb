@@ -3,6 +3,7 @@
   <p><%= @question.content %></p>
   <p>You can come back to your question at:
     <%= link_to request.original_url, questions_path(@question) %>
+    <p>Tags: <%= @question.all_tags %>
 </div>
 <% if current_user == @question.user %>
 <%= link_to 'Edit', edit_question_path %>
