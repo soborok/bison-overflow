@@ -1,21 +1,26 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :questions do
-    resources :answers, only: [ :create, :edit, :new, :delete ]
-  end
-
-  resources :users, only:[:index, :show] do
-    resources :answers, only: [ :index ]
-  end
 
   root 'questions#index'
 
+  resources :questions do
+    resources :answers, only: [:index, :new, :create]
+  end
+  # Shallow Nesting
+  resources :answers, only: [:show, :edit, :update, :destroy]
+
+# #########################################
+# resources :questions do
+#   resources :answers, shallow: true
+# end
+###########################################
+
+  get '/users' => 'users#index'
+  # POST '/users' => 'users#create'
   get '/signup' => 'users#new'
-  # GET '/users' => 'users#index'  
-  # POST '/users' => 'users#create'  
-  # GET '/users/:id' => 'users#show'
   # GET '/users/:id/edit' => users#edit
+  get '/users/:id', :to => 'users#show', :as => :user
   # PATCH/PUT '/users/:id' => user#update
   # Delete '/users/:id' => users#destroy
   get '/login' => 'users#login'
