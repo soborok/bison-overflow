@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Comments</h1>
+
+
+ 
+    <% @comments.each do |comment| %>
+    <ul>
+        <li><%= comment.content %></li>
+        <li><%= link_to 'Show', comment %></li>
+        <li><%= link_to 'Edit', edit_comment_path(comment) %></li>
+        <li><%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    </ul>
+    <% end %>
+
+
+<br>
+
+<%= link_to 'New Comment', new_comment_path %>
