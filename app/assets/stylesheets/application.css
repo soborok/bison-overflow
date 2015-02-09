@@ -12,10 +12,11 @@ body {
   display: block;
   font: 100% Verdana, sans-serif;
   color: black;
-  background: -webkit-linear-gradient(white, grey);
-  background: -o-linear-gradient(white, grey);
-  background: -moz-linear-gradient(white, grey);
-  background: linear-gradient(white, grey); }
+  background: -webkit-linear-gradient(#7e7e7e, #545454);
+  background: -o-linear-gradient(#7e7e7e, #545454);
+  background: -moz-linear-gradient(#7e7e7e, #545454);
+  background: linear-gradient(#7e7e7e, #545454); 
+}
 
 nav {
   display: block;
@@ -23,26 +24,62 @@ nav {
   border-radius: 10px;
   background: linear-gradient(#873ED1, #49198E);
   color: white; }
-  nav a {
-    color: white; }
-    nav a:hover {
-      color: white; }
 
-nav h1 {
-  width: 20%;
-  display: inline; }
+nav a {
+  color: white; 
+}
 
-nav ul {
-  margin-left: 25em;
-  width: 50%;
-  display: inline; }
+a{
+  color: black;
+}
 
-nav ul li {
-  list-style-type: none;
-  display: inline; }
+a:hover {
+  color: white; 
+}
+
+nav a {
+ display: inline;
+ width: 20%;
+ float: right;
+}
 
 .content {
-  width: 60%;
-  margin: auto; }
+  background: linear-gradient(#873ED1, #49198E);
+  width: 40%;
+  margin: auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  padding: 2em;
+  border: 3px solid black; 
+  border-radius: 12px;
+}
 
-/*# sourceMappingURL=application.css.map */
+.content form input    {
+margin: auto;
+margin-bottom: 2em;
+width: 20em;
+display:block;
+border: 1px solid #999;
+
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+} 
+
+.content form input button  {
+ border-radius: 12px;
+}
+
+#question_content {
+  margin: auto;
+  margin-bottom: 2em;
+  display: block;
+  width: 20em;
+  border: 1px dotted #999;
+  border-radius: 0;
+  background: white;
+}
+
+li{
+    list-style-type: none;
+}
