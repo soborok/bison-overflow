@@ -28,3 +28,12 @@
     <br />
     <% end %>
   </ul>
+
+  <h3>All Questions I've answered</h3>
+  <ul>
+    <% answered_questions.each do |question| %>
+    <li><%= link_to question.title, question_path(question) %> by <%= link_to question.user.full_name, user_path %>
+    </li>
+    <br />
+    <% end %>
+  </ul>
