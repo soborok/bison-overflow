@@ -7,29 +7,22 @@ class CommentsController < ApplicationController
   end
 
   def new
-
+    @commentable = find_commentable
     @comment = Comment.new
-  end
-
-  def edit
   end
 
 
   def create
-    @comment = Comment.new(comment_params)
-
+    @commentable = find_commentable
+    @comment = @commentable.comments.create(comment_params)
+    if @comment
+      redirect_to :id => nil
+    else
+      render :action => 'new'
+    end
 
   end
 
-  def update
-    
-  end
-
- 
-  def destroy
-    @comment.destroy
-    
-  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -47,6 +40,7 @@ class CommentsController < ApplicationController
         if name =~ /(.+)_id$/
           return $1.classify.constantize.find(value)
         end
-      nil
+        nil
+      end
     end
 end
