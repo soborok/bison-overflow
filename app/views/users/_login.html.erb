@@ -1,5 +1,5 @@
 <!-- <h1>Login</h1> -->
-
+<li><%= link_to 'Sign Up', signup_path %><li>
 <%= form_for @user, url: '/login', action: 'post' do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -19,8 +19,7 @@
 
     <%= f.label :password %>
     <%= f.password_field :password, :value => '' %>
-
     <%= f.submit "Log in" %>
 <% end %>
-<%= link_to 'Sign Up', signup_path %>
+
 <%#= link_to 'Back', root_path %>
